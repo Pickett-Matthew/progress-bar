@@ -1,7 +1,52 @@
 .progress-bar {
-  width: 100%;
+  display: none;
   height: 6px;
-  background-color: black;
+  background: linear-gradient(to right, #f5a742, #f59542, #f57842, red);
   margin-bottom: auto;
   align-self: flex-start;
+  border-radius: 6px;
+
+  &.loading {
+    display: flex;
+    animation: loading 10s;
+    animation-fill-mode: forwards;
+  }
+
+  //   &.hang {
+  //     width: 90%;
+  //   }
+}
+
+@keyframes loading {
+  0% {
+    width: 10%;
+  }
+  25% {
+    width: 25%;
+  }
+  50% {
+    width: 50%;
+  }
+  75% {
+    width: 75%;
+  }
+  90% {
+    width: 90%;
+  }
+  // This is what I needed, you have to include 100% if you want fill-mode: forwards to work
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
 }

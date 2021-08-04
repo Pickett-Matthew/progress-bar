@@ -2,6 +2,9 @@ import React, { Component } from "react";
 
 export default class ProgressBar extends Component {
   render() {
-    return <span className="progress-bar"></span>;
+    let { barstyle } = this.props;
+    return <span className={barstyle}></span>;
   }
 }
+
+// onAnimationEnd={this.props.startfade}
