@@ -22,7 +22,7 @@
     animation: fillBar 1s ease-in forwards, fade 4s ease-in forwards;
   }
 }
-// you have to include 100% if you want 'fill-mode: forwards' to work
+// you have to include 100% if you want 'fill-mode: forwards' to work, this had me for a bit
 @keyframes loading {
   0% {
     width: 10%;
