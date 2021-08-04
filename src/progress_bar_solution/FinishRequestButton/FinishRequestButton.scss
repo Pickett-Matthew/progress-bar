@@ -1,0 +1,17 @@
+.finish-request {
+  display: flex;
+  width: 200px;
+  height: 45px;
+  color: red;
+  border: 1px solid red;
+  background-color: #fff;
+  border-radius: 21px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 10px;
+
+  &:hover {
+    border: 2px solid red;
+  }
+}

@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  min-height: 400px; // matching the height in the solutions box
+  justify-content: flex-end;
+
+  .row {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+}

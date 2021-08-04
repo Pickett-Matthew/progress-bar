@@ -1,0 +1,67 @@
+// the bar should be 6px tall and use a gradient that starts orange and ends red
+.progress-bar {
+  display: none;
+  height: 6px;
+  background: linear-gradient(to right, #f5a742, #f59542, #f57842, red);
+  margin-bottom: auto;
+  align-self: flex-start;
+  border-radius: 6px;
+
+  //   the bar should animate progress from 0% to 90% over 15 seconds
+  &.loading {
+    display: flex;
+    animation: loading 16s;
+    animation-fill-mode: forwards;
+  }
+
+  // the bar should animate to 100% (in 1 second) when the request finishes regardless of it's current position.
+  // It should then disappear 3 seconds later. Bonus: fade the bar away
+
+  &.complete {
+    display: flex;
+    animation: fillBar 1s ease-in forwards, fade 4s ease-in forwards;
+  }
+}
+// you have to include 100% if you want 'fill-mode: forwards' to work
+@keyframes loading {
+  0% {
+    width: 10%;
+  }
+  25% {
+    width: 25%;
+  }
+  50% {
+    width: 50%;
+  }
+  75% {
+    width: 75%;
+  }
+  90% {
+    width: 90%;
+  }
+  100% {
+    width: 90%;
+  }
+}
+@keyframes fillBar {
+  from {
+    width: 90%;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}

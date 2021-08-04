@@ -3,6 +3,10 @@
 @import "../shared_styles/typography.scss";
 @import "../shared_styles/general.scss";
 @import "../exercise/Exercise.scss";
+@import "../progress_bar_solution/AppContainer/AppContainer.scss";
+@import "../progress_bar_solution/RequestButton/RequestButton.scss";
+@import "../progress_bar_solution/ProgressBar/ProgressBar.scss";
+@import "../progress_bar_solution/FinishRequestButton/FinishRequestButton.scss";
 
 .App {
   .exercise-index {
