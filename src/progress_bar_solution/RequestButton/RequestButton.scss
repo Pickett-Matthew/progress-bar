@@ -1,0 +1,17 @@
+.request-button {
+  display: flex;
+  width: 200px;
+  height: 45px;
+  color: #00c1a6;
+  border: 1px solid #00c1a6;
+  background-color: #fff;
+  border-radius: 21px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 10px;
+
+  &:hover {
+    border: 2px solid #00c1a6;
+  }
+}
