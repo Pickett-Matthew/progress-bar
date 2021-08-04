@@ -6,5 +6,3 @@ export default class ProgressBar extends Component {
     return <span className={barstyle}></span>;
   }
 }
-
-// onAnimationEnd={this.props.startfade}

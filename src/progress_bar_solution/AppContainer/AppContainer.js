@@ -10,38 +10,49 @@ export default class AppContainer extends Component {
   state = {
     requestBtnText: "START REQUEST",
     barStyle: "progress-bar",
+    showFinishBtn: false,
+    reqBtnStyle: "request-button",
   };
 
   /**
    * Reacts to the RequestButton onClick function, sets the state to change innerText
    * and initalize the progress bar animation
    */
-
   startRequest = () => {
     this.setState({
       requestBtnText: "LOADING...",
       barStyle: "progress-bar loading",
+      showFinishBtn: true,
+      reqBtnStyle: "request-button clicked",
     });
   };
 
-  animationEnded = () => {
+  /**
+   * called from the FinishRequestButton, animation will fade out and state is back to inital
+   */
+  finishRequest = () => {
     this.setState({
+      barStyle: "progress-bar loading complete",
       requestBtnText: "START REQUEST",
-      barStyle: "progress-bar loading hang",
+      showFinishBtn: false,
+      reqBtnStyle: "request-button",
     });
   };
 
   render() {
-    const { barStyle } = this.state;
+    const { barStyle, requestBtnText, showFinishBtn, reqBtnStyle } = this.state;
     return (
       <div className="container">
-        <ProgressBar barstyle={barStyle} startfade={this.animationEnded} />
+        <ProgressBar barstyle={barStyle} />
         <div className="row">
           <RequestButton
-            btntext={this.state.requestBtnText}
+            btntext={requestBtnText}
             startrequest={this.startRequest}
+            btnstyle={reqBtnStyle}
           />
-          <FinishRequestButton />
+          {showFinishBtn && (
+            <FinishRequestButton finishrequest={this.finishRequest} />
+          )}
         </div>
       </div>
     );
